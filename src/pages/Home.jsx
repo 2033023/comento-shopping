@@ -18,7 +18,7 @@ const Home = () => {
       setProducts(mockTheme2Produdcts);
     }
   };
-
+  
   useEffect(() => {
     // 1초 후, 상품 초기화
     setTimeout(() => {
