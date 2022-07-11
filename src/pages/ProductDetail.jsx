@@ -23,10 +23,6 @@ const ProductDetail = () => {
         <Navigation NavigationName={"코멘토 쇼핑"}/>
       </TitleSection>
 
-      <ProductCard
-              key={product.id}
-              thumbnail={product.thumbnail}
-            />
     </ProductDetailStyled>
   );
 };
