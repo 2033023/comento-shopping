@@ -18,7 +18,7 @@ const Home = () => {
       setProducts(mockTheme2Produdcts);
     }
   };
-  
+
   useEffect(() => {
     // 1초 후, 상품 초기화
     setTimeout(() => {
@@ -26,15 +26,12 @@ const Home = () => {
     }, 1000);
   }, []);
 
-
   return (
     <div>
       <div>
-      <TitleSection>
-        <Navigation NavigationName={"코멘토 쇼핑"}/>
-      </TitleSection>
-
-        <TitleLine />
+        <TitleSection>
+          <Navigation name="코멘토 쇼핑" />
+        </TitleSection>
 
         <ThemeSection>
           <ThemeButton
@@ -48,13 +45,12 @@ const Home = () => {
         </ThemeSection>
 
         <GrayLine />
-
       </div>
       <ProductSection>
-      {products ? (
+        {products ? (
           products.map((product) => (
             <ProductCard
-            onClick={() => navigate(`product/${product.id}`)}
+              onClick={() => navigate(`product/${product.id}`)}
               key={product.id}
               name={product.name}
               description={product.description}
@@ -65,35 +61,35 @@ const Home = () => {
           <div>테마를 선택해주세요</div>
         )}
       </ProductSection>
-        </div>
-      );
-    };
-    
-    const ThemeSection = styled.div`
-      display: flex;
-      gap: 12px;
-      padding: 40px 12px;
-    `;
-    
-    const GrayLine = styled.div`
-      height: 8px;
-      width: 100%;
-      background: #eeeeee;
-    `;
-    
-    const ProductSection = styled.div`
-      padding: 20px;
-    `;
+    </div>
+  );
+};
+
+const ThemeSection = styled.div`
+  display: flex;
+  gap: 12px;
+  padding: 40px 12px;
+`;
+
+const GrayLine = styled.div`
+  height: 8px;
+  width: 100%;
+  background: #eeeeee;
+`;
+
+const ProductSection = styled.div`
+  padding: 20px;
+`;
 
 const TitleLine = styled.div`
-height: 1px;
-width: 100%;
-background: #EEEEEE;
+  height: 1px;
+  width: 100%;
+  background: #eeeeee;
 `;
 
 const TitleSection = styled.div`
-width: 390px;
-height: 66px;
+  width: 390px;
+  height: 66px;
 `;
-    
-    export default Home;
+
+export default Home;
